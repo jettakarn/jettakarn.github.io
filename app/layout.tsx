@@ -3,8 +3,8 @@ import "./globals.css";
 import FixedBranding from "@/components/FixedBranding";
 
 export const metadata: Metadata = {
-  title: "Jettakarn Khamwai Portfolio",
-  description: "A developer portfolio built with Next.js and Tailwind CSS.",
+  title: "Jetson's Orbit",
+  description: "Built with Next.js.",
 };
 
 export default function RootLayout({

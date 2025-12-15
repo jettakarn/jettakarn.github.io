@@ -60,13 +60,13 @@ export default function Portfolio() {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="bg-[#1E1E1E] p-6 rounded-3xl border border-gray-800 flex justify-around items-center h-full"
               >
-                <SocialLink href="#" icon={<Linkedin size={28} />} label="LinkedIn" />
-                <SocialLink href="#" icon={<Github size={28} />} label="GitHub" />
-                <SocialLink href="#" icon={<Code size={28} />} label="LeetCode" />
+                <SocialLink href="https://www.linkedin.com/in/jettakarn/" icon={<Linkedin size={28} />} label="LinkedIn" />
+                <SocialLink href="https://github.com/jettakarn" icon={<Github size={28} />} label="GitHub" />
+                <SocialLink href="https://leetcode.com/u/jettakarn/" icon={<Code size={28} />} label="LeetCode" />
               </motion.div>
 
               <motion.a 
-                href="mailto:contact@example.com"
+                href="mailto:itsjazzk@proton.me"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
@@ -100,7 +100,7 @@ export default function Portfolio() {
             </h3>
             <span className="text-[#FF8C00] font-mono mt-1 md:mt-0">2024 – 2028</span>
           </div>
-          <p className="text-gray-400 text-lg">Yuan Ze University (元智大學)</p>
+          <p className="text-gray-400 text-lg">Yuan Ze University</p>
           <p className="text-gray-500 mt-2 text-sm">
             Focusing on foundational computer science principles, system architecture, and software development.
           </p>
@@ -142,7 +142,7 @@ export default function Portfolio() {
 
         <ResumeSection title="Interests">
           <div className="flex flex-wrap gap-3">
-            {["Coffee", "Coding", "Gaming", "Riding Motorcycle"].map((item, i) => (
+            {["Coffee", "Games", "Motorcycles", "Cars"].map((item, i) => (
               <span key={i} className="px-4 py-2 border border-gray-700 rounded-full text-gray-400 text-sm hover:border-[#FF8C00] hover:text-[#FF8C00] transition-colors cursor-default">
                 {item}
               </span>
@@ -151,7 +151,7 @@ export default function Portfolio() {
         </ResumeSection>
 
         <footer className="pt-20 pb-10 text-center text-gray-600 text-sm">
-          <p>© {new Date().getFullYear()} Jettakarn Khamwai. Built with React & Tailwind.</p>
+          <p>© {new Date().getFullYear()} Jettakarn Khamwai.</p>
         </footer>
 
       </main>

@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "deploy": "gh-pages -d out -t true"
-  },
+  "dev": "next dev",
+  "build": "next build",
+  "postbuild": "type nul > out\\.nojekyll",
+  "start": "next start",
+  "lint": "next lint",
+  "deploy": "gh-pages -d out -a"
+},
   "dependencies": {
     "framer-motion": "^12.23.26",
     "gh-pages": "^6.3.0",
