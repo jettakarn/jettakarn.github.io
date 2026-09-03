@@ -8,6 +8,7 @@ export const cvData = {
     linkedin: "https://www.linkedin.com/in/jettakarn/",
     github: "https://github.com/jettakarn",
     leetcode: "https://leetcode.com/u/jettakarn/",
+    instagram: "https://www.instagram.com/jettakarn/",
   },
   education: {
     degree: "Computer Science and Engineering",
@@ -49,11 +50,17 @@ export const cvData = {
       url: "https://github.com/jettakarn/jettakarn.github.io",
       year: "2025",
     },
+    {
+      name: "2shiftly",
+      description: "CLI tool for company daily shift rosters.",
+      stack: ["Python"],
+      url: "https://github.com/jettakarn/2shiftly",
+      year: "2026",
+    },
   ],
   currentFocus: [
     "Deep diving into Data Structures and Algorithms through LeetCode.",
     "Building small-scale projects using Python to understand automation.",
     "Mastering low-level concepts in C/C++ for system programming.",
   ],
-  interests: ["Coffee", "Games", "Motorcycles", "Cars"],
 };

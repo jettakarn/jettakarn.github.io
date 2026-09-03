@@ -8,7 +8,7 @@ Personal portfolio site for **Jettakarn Khamwai** — a static single-page site 
 
 - Hero with name, tagline, and contact CTAs
 - Data-driven Projects section
-- Education, Skills, and Interests
+- Education and Skills
 - Light / dark theme toggle (dark by default)
 
 ## Stack
