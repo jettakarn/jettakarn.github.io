@@ -10,13 +10,22 @@ export const cvData = {
     leetcode: "https://leetcode.com/u/jettakarn/",
     instagram: "https://www.instagram.com/jettakarn/",
   },
-  education: {
+  education: [
+    {
     degree: "Computer Science and Engineering",
     school: "Yuan Ze University",
     period: "2024 – 2028",
     description:
       "Focusing on foundational computer science principles, system architecture, and software development.",
-  },
+    },
+    {
+    degree: "High School Diploma",
+    school: "Taoyuan Munipal Yang-Ming Senior High",
+    period: "2019 – 2022",
+    description:
+      "Completed a rigorous academic program with a focus on core subjects including Mathematics, Advanced Sciences, Language Arts, and Social Studies.",
+    }
+  ],
   skills: {
     languages: ["Python", "C/C++", "JavaScript"],
     competencies: [
@@ -32,10 +41,10 @@ export const cvData = {
         "Reproduced parts of the TCU shared task at ROCLING-2025, centered on multilingual-e5-large-instruct with SVR.",
       stack: ["Python", "NLP", "SVR"],
       url: "https://github.com/jettakarn/rocling25-tcu-reproduction",
-      year: "2025",
+      year: "2026",
     },
     {
-      name: "Islet GNOME Extension",
+      name: "Islet",
       description:
         "A native Dynamic Island–like feature for GNOME 45+, built as a desktop shell extension.",
       stack: ["JavaScript", "GNOME"],
