@@ -1,5 +1,4 @@
 export const shared = {
-  name: "Jettakarn Khamwai",
   email: "itsjazzk@proton.me",
   socials: {
     linkedin: "https://www.linkedin.com/in/jettakarn/",
@@ -7,11 +6,11 @@ export const shared = {
     leetcode: "https://leetcode.com/u/jettakarn/",
     instagram: "https://www.instagram.com/jettakarn/",
   },
-  skillLanguages: ["Python", "C/C++", "JavaScript"],
 };
 
 export const locales = {
   en: {
+    name: "Jettakarn Khamwai",
     title: "CS Student @ YZU CSE",
     tagline:
       "Building foundations in algorithms, systems, and small tools that scratch real itches.",
@@ -31,11 +30,30 @@ export const locales = {
           "Completed a rigorous academic program with a focus on core subjects including Mathematics, Advanced Sciences, Language Arts, and Social Studies.",
       },
     ],
-    competencies: [
-      "Data Structures & Algorithms",
-      "Object-Oriented Programming (OOP)",
-      "Problem Solving",
-    ],
+    skillTiles: {
+      techStack: [
+        { id: "git", label: "Git" },
+        { id: "github", label: "GitHub" },
+        { id: "linux", label: "Linux" },
+        { id: "nodejs", label: "Node.js" },
+        { id: "cpp", label: "C/C++" },
+        { id: "python", label: "Python" },
+        { id: "htmlcss", label: "HTML/CSS" },
+        { id: "bash", label: "Bash" },
+      ],
+      skills: [
+        { id: "brainstorming", label: "Brainstorming" },
+        { id: "pcBuilding", label: "PC Building" },
+        { id: "videoEditing", label: "Video Editing" },
+        { id: "office", label: "Microsoft Office" },
+      ],
+      languages: [
+        { id: "english", label: "English" },
+        { id: "mandarin", label: "Mandarin Chinese" },
+        { id: "hokkien", label: "Taiwanese Hokkien" },
+        { id: "thai", label: "Thai" },
+      ],
+    },
     projects: [
       {
         name: "ROCLING 2025 TCU Reproduction",
@@ -69,54 +87,66 @@ export const locales = {
         year: "2026",
       },
     ],
-    currentFocus: [
-      "Deep diving into Data Structures and Algorithms through LeetCode.",
-      "Building small-scale projects using Python to understand automation.",
-      "Mastering low-level concepts in C/C++ for system programming.",
-    ],
     ui: {
       connect: "Let's connect",
       viewProjects: "View projects",
       projects: "Projects",
       selectedWork: "Selected work",
       education: "Education",
+      techStack: "Tech Stack",
       skills: "Skills",
       languages: "Languages",
-      competencies: "Competencies",
-      focus: "Focus",
       scrollProjects: "Scroll to projects",
       langButton: "Language",
       langEn: "English",
       langZh: "繁體中文",
       themeToLight: "Switch to light mode",
       themeToDark: "Switch to dark mode",
-      pageTitleSuffix: "Portfolio",
     },
   },
   "zh-Hant": {
-    title: "元智資工系學生",
+    name: "威喆森",
+    title: "元智大學資訊工程學系",
     tagline: "打好演算法與系統基礎，並動手做出能解決實際需求的小工具。",
     education: [
       {
         degree: "資訊工程學系",
         school: "元智大學",
         period: "2024 – 2028",
-        description:
-          "專注於電腦科學基礎、系統架構與軟體開發。",
+        description: "專注於電腦科學基礎、系統架構與軟體開發。",
       },
       {
-        degree: "高中畢業",
+        degree: "高中",
         school: "桃園市立陽明高級中學",
         period: "2019 – 2022",
         description:
           "完成扎實的高中課程，著重數學、自然科學、語文與社會領域。",
       },
     ],
-    competencies: [
-      "資料結構與演算法",
-      "物件導向程式設計 (OOP)",
-      "問題解決",
-    ],
+    skillTiles: {
+      techStack: [
+        { id: "git", label: "Git" },
+        { id: "github", label: "GitHub" },
+        { id: "linux", label: "Linux" },
+        { id: "nodejs", label: "Node.js" },
+        { id: "cpp", label: "C/C++" },
+        { id: "python", label: "Python" },
+        { id: "htmlcss", label: "HTML/CSS" },
+        { id: "bash", label: "Bash" },
+      ],
+      skills: [
+        { id: "brainstorming", label: "腦力激盪" },
+        { id: "pcBuilding", label: "組裝電腦" },
+        { id: "videoEditing", label: "影片剪輯" },
+        { id: "office", label: "微軟 Office" },
+      ],
+      languages: [
+        { id: "english", label: "英語" },
+        { id: "mandarin", label: "華語" },
+        { id: "hokkien", label: "台灣閩南語" },
+        { id: "thai", label: "泰語" },
+      ],
+    },
     projects: [
       {
         name: "ROCLING 2025 TCU 重現",
@@ -129,7 +159,7 @@ export const locales = {
       {
         name: "Islet",
         description:
-          "為 GNOME 45+ 打造類似 Dynamic Island 的原生桌面擴充功能。",
+          "為 GNOME 45+ 環境打造類似 Dynamic Island 的桌面擴充功能。",
         stack: ["JavaScript", "GNOME"],
         url: "https://github.com/jettakarn/islet-gnome-extension",
         year: "2026",
@@ -137,7 +167,7 @@ export const locales = {
       {
         name: "個人作品集網站",
         description:
-          "本站——以 Astro 打造的極簡作品集，呈現專案、學歷與聯絡資訊。",
+          "本網站——基於 Astro 打造的極簡作品集，呈現專案、學歷與聯絡資訊。",
         stack: ["Astro", "Tailwind"],
         url: "https://github.com/jettakarn/jettakarn.github.io",
         year: "2025",
@@ -150,28 +180,21 @@ export const locales = {
         year: "2026",
       },
     ],
-    currentFocus: [
-      "透過 LeetCode 深入練習資料結構與演算法。",
-      "用 Python 做小型專案，理解自動化流程。",
-      "以 C/C++ 掌握系統程式設計的底層概念。",
-    ],
     ui: {
       connect: "聯絡我",
       viewProjects: "查看專案",
       projects: "專案",
       selectedWork: "精選作品",
       education: "學歷",
+      techStack: "技術棧",
       skills: "技能",
-      languages: "程式語言",
-      competencies: "核心能力",
-      focus: "目前方向",
+      languages: "語言",
       scrollProjects: "捲動至專案",
       langButton: "語言",
       langEn: "English",
       langZh: "繁體中文",
       themeToLight: "切換至淺色模式",
       themeToDark: "切換至深色模式",
-      pageTitleSuffix: "作品集",
     },
   },
 };
