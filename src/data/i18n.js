@@ -58,31 +58,32 @@ export const locales = {
       {
         name: "ROCLING 2025 TCU Reproduction",
         description:
-          "Reproduced parts of the TCU shared task at ROCLING-2025, centered on multilingual-e5-large-instruct with SVR.",
-        stack: ["Python", "NLP", "SVR"],
-        url: "https://github.com/jettakarn/rocling25-tcu-reproduction",
+          "Independent reproduction of TCU’s ROCLING-2025 Chinese dimensional sentiment pipeline: e5 + LLM embeddings, SVR / ensemble, with a five-encoder test result close to the paper.",
+        stack: ["Python", "NLP", "PyTorch", "SVR"],
+        url: "https://github.com/jettakarn/rocling25-tcu-repro",
         year: "2026",
       },
       {
         name: "Islet",
         description:
-          "A native Dynamic Island–like feature for GNOME 45+, built as a desktop shell extension.",
-        stack: ["JavaScript", "GNOME"],
+          "Native Dynamic Island–style peninsula for GNOME Shell 45+ (GJS): media, weather, battery banners, and an experimental fingerprint auth island.",
+        stack: ["JavaScript", "GNOME", "GJS"],
         url: "https://github.com/jettakarn/islet-gnome-extension",
         year: "2026",
       },
       {
-        name: "Personal Portfolio",
+        name: "Personal site",
         description:
-          "This site — a minimal Astro portfolio for projects, education, and contact.",
+          "This Astro site: bilingual EN / 繁中, monochrome theme, projects and education.",
         stack: ["Astro", "Tailwind"],
         url: "https://github.com/jettakarn/jettakarn.github.io",
         year: "2025",
       },
       {
         name: "2shiftly",
-        description: "CLI tool for company daily shift rosters.",
-        stack: ["Python"],
+        description:
+          "Local web tool that OCR-scans daily shift PDFs into calendar .ics files (built for Ambassador Cinema rosters), fully offline.",
+        stack: ["Python", "OCR", "Web"],
         url: "https://github.com/jettakarn/2shiftly",
         year: "2026",
       },
@@ -151,31 +152,31 @@ export const locales = {
       {
         name: "ROCLING 2025 TCU 重現",
         description:
-          "重現 ROCLING-2025 Shared Task 中 TCU 的部分實作，以 multilingual-e5-large-instruct 搭配 SVR 為主線。",
-        stack: ["Python", "NLP", "SVR"],
-        url: "https://github.com/jettakarn/rocling25-tcu-reproduction",
+          "獨立重現 TCU 於 ROCLING-2025 的華語維度情感分析流程：e5 與 LLM embedding、SVR／ensemble，五編碼器測試結果接近論文 Table 4。",
+        stack: ["Python", "NLP", "PyTorch", "SVR"],
+        url: "https://github.com/jettakarn/rocling25-tcu-repro",
         year: "2026",
       },
       {
         name: "Islet",
         description:
-          "為 GNOME 45+ 環境打造類似 Dynamic Island 的桌面擴充功能。",
-        stack: ["JavaScript", "GNOME"],
+          "為 GNOME Shell 45+ 打造的原生 Dynamic Island 式半島（GJS）：媒體、天氣、電量橫幅，以及實驗性指紋驗證島。",
+        stack: ["JavaScript", "GNOME", "GJS"],
         url: "https://github.com/jettakarn/islet-gnome-extension",
         year: "2026",
       },
       {
-        name: "個人作品集網站",
-        description:
-          "本網站——基於 Astro 打造的極簡作品集，呈現專案、學歷與聯絡資訊。",
+        name: "個人網站",
+        description: "本站：Astro、中英雙語、黑白主題，呈現專案與學歷。",
         stack: ["Astro", "Tailwind"],
         url: "https://github.com/jettakarn/jettakarn.github.io",
         year: "2025",
       },
       {
         name: "2shiftly",
-        description: "公司每日班表用的 CLI 工具。",
-        stack: ["Python"],
+        description:
+          "本機網頁工具：掃描班表 PDF，離線 OCR 後匯出行事曆 .ics（目前對應國賓影城班表）。",
+        stack: ["Python", "OCR", "Web"],
         url: "https://github.com/jettakarn/2shiftly",
         year: "2026",
       },
