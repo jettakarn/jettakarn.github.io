@@ -64,11 +64,11 @@ export const locales = {
         year: "2026",
       },
       {
-        name: "Islet",
+        name: "Brow",
         description:
-          "Native Dynamic Island–style peninsula for GNOME Shell 45+ (GJS): media, weather, battery banners, and an experimental fingerprint auth island.",
+          "Notch that expands into an island for GNOME Shell 45+ (GJS): media, volume HUD, search, battery banners, and an experimental fingerprint auth island.",
         stack: ["JavaScript", "GNOME", "GJS"],
-        url: "https://github.com/jettakarn/islet-gnome-extension",
+        url: "https://github.com/jettakarn/brow",
         year: "2026",
       },
       {
@@ -158,11 +158,11 @@ export const locales = {
         year: "2026",
       },
       {
-        name: "Islet",
+        name: "Brow",
         description:
-          "為 GNOME Shell 45+ 打造的原生 Dynamic Island 式半島（GJS）：媒體、天氣、電量橫幅，以及實驗性指紋驗證島。",
+          "為 GNOME Shell 45+ 打造的凹槽，展開後成為島（GJS）：媒體、音量 HUD、搜尋、電量橫幅，以及實驗性指紋驗證。",
         stack: ["JavaScript", "GNOME", "GJS"],
-        url: "https://github.com/jettakarn/islet-gnome-extension",
+        url: "https://github.com/jettakarn/brow",
         year: "2026",
       },
       {
