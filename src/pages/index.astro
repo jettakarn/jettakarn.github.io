@@ -286,41 +286,44 @@ const techIcons = {
           </p>
         </div>
 
-        <ul class="projects-grid" id="projects-list">
-          {
-            projects.map((project) => (
-              <li>
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-tile interactive-tile group"
+        <div class="projects-split interactive-tile" id="projects-panel">
+          <div class="project-rows" id="projects-list" role="listbox" aria-label={ui.projects}>
+            {
+              projects.map((project, index) => (
+                <button
+                  type="button"
+                  class:list={["project-row", index === 0 && "is-active"]}
+                  role="option"
+                  aria-selected={index === 0 ? "true" : "false"}
+                  data-project-index={index}
                 >
-                  <p class="project-tile-year">{project.year}</p>
-                  <div class="flex items-baseline gap-2">
-                    <h3 class="project-tile-name group-hover:underline underline-offset-4 decoration-1">
-                      {project.name}
-                    </h3>
-                    <svg
-                      class="opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      aria-hidden="true"
-                    >
-                      <path d="M7 17L17 7M7 7h10v10"></path>
-                    </svg>
-                  </div>
-                  <p class="project-tile-desc">{project.description}</p>
-                  <p class="project-tile-stack">{project.stack.join(" · ")}</p>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
+                  <span class="project-row-name">{project.name}</span>
+                  <span class="project-row-desc">{project.description}</span>
+                </button>
+              ))
+            }
+          </div>
+          <div
+            class="project-detail"
+            id="project-detail"
+            aria-live="polite"
+            aria-label={projects[0]?.name}
+          >
+            <p class="project-detail-year" id="project-detail-year">{projects[0]?.year}</p>
+            <h3 class="project-detail-name" id="project-detail-name">{projects[0]?.name}</h3>
+            <p class="project-detail-desc" id="project-detail-desc">{projects[0]?.description}</p>
+            <p class="project-detail-stack" id="project-detail-stack">{projects[0]?.stack.join(" · ")}</p>
+            <a
+              id="project-detail-link"
+              class="project-detail-link"
+              href={projects[0]?.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
       </section>
 
       <section class="section-panel interactive-tile">
@@ -541,27 +544,60 @@ const techIcons = {
           .replaceAll('"', "&quot;");
       }
 
+      let projectItems: LocaleData["projects"] = [];
+
+      function showProject(index: number) {
+        const project = projectItems[index];
+        const list = document.getElementById("projects-list");
+        const detail = document.getElementById("project-detail");
+        if (!project || !list || !detail) return;
+
+        list.querySelectorAll<HTMLButtonElement>(".project-row").forEach((row) => {
+          const active = Number(row.dataset.projectIndex) === index;
+          row.classList.toggle("is-active", active);
+          row.setAttribute("aria-selected", active ? "true" : "false");
+        });
+
+        const year = document.getElementById("project-detail-year");
+        const name = document.getElementById("project-detail-name");
+        const desc = document.getElementById("project-detail-desc");
+        const stack = document.getElementById("project-detail-stack");
+        const link = document.getElementById("project-detail-link") as HTMLAnchorElement | null;
+        if (year) year.textContent = project.year;
+        if (name) name.textContent = project.name;
+        if (desc) desc.textContent = project.description;
+        if (stack) stack.textContent = project.stack.join(" · ");
+        if (link) link.href = project.url;
+        detail.setAttribute("aria-label", project.name);
+      }
+
       function renderProjects(locale: LocaleData) {
         const list = document.getElementById("projects-list");
         if (!list) return;
+        projectItems = locale.projects;
         list.innerHTML = locale.projects
           .map(
-            (project) => `
-              <li>
-                <a href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer" class="project-tile interactive-tile group">
-                  <p class="project-tile-year">${escapeHtml(project.year)}</p>
-                  <div class="flex items-baseline gap-2">
-                    <h3 class="project-tile-name group-hover:underline underline-offset-4 decoration-1">${escapeHtml(project.name)}</h3>
-                    <svg class="opacity-0 group-hover:opacity-100 transition-opacity shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                      <path d="M7 17L17 7M7 7h10v10"></path>
-                    </svg>
-                  </div>
-                  <p class="project-tile-desc">${escapeHtml(project.description)}</p>
-                  <p class="project-tile-stack">${escapeHtml(project.stack.join(" · "))}</p>
-                </a>
-              </li>`,
+            (project, index) => `
+              <button type="button" class="project-row${index === 0 ? " is-active" : ""}" role="option" aria-selected="${index === 0 ? "true" : "false"}" data-project-index="${index}">
+                <span class="project-row-name">${escapeHtml(project.name)}</span>
+                <span class="project-row-desc">${escapeHtml(project.description)}</span>
+              </button>`,
           )
           .join("");
+
+        list.querySelectorAll<HTMLButtonElement>(".project-row").forEach((row) => {
+          const select = () => {
+            const index = Number(row.dataset.projectIndex);
+            if (!Number.isNaN(index)) showProject(index);
+          };
+          row.addEventListener("pointerenter", select);
+          row.addEventListener("click", (event) => {
+            event.preventDefault();
+            select();
+          });
+        });
+
+        showProject(0);
       }
 
       function renderEducation(locale: LocaleData) {
