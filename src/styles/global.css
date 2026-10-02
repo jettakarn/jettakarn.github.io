@@ -314,13 +314,16 @@ body {
 .project-rows {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid var(--line-strong);
+  gap: 0.7rem;
+  padding: 0.85rem 0.85rem 1.05rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
 }
 
 @media (min-width: 768px) {
   .project-rows {
     border-bottom: 0;
-    border-right: 1px solid var(--line-strong);
+    border-right: 1px solid var(--line);
   }
 }
 
@@ -330,25 +333,33 @@ body {
   flex: 1 1 auto;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  width: calc(100% - 4px);
   margin: 0;
-  padding: 1rem 1.15rem;
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  background: transparent;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--ink);
+  border-radius: 0.45rem;
+  background: var(--surface);
   color: var(--ink);
   font: inherit;
   text-align: left;
   cursor: pointer;
+  box-shadow: 4px 4px 0 0 var(--ink);
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    background-color 0.16s ease,
+    color 0.16s ease;
 }
 
 .project-row:last-child {
-  border-bottom: 0;
+  margin-bottom: 0;
 }
 
 .project-row.is-active {
   background: var(--selection-bg);
   color: var(--selection-fg);
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 0 var(--ink);
 }
 
 .project-row-name {
@@ -357,6 +368,7 @@ body {
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
 }
 
 .project-row-desc {
@@ -538,7 +550,13 @@ html.theme-to-dark::view-transition-new(root) {
   position: relative;
 }
 
+.lang-switch.is-open {
+  z-index: 60;
+}
+
 .lang-toggle {
+  position: relative;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -559,67 +577,69 @@ html.theme-to-dark::view-transition-new(root) {
 }
 
 .lang-menu {
-  position: absolute;
-  top: calc(100% + 0.35rem);
-  left: 0;
-  z-index: 50;
-  min-width: 9.5rem;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2em;
   margin: 0;
-  padding: 0.35rem;
+  padding: 0;
   list-style: none;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 0.65rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  opacity: 0;
+  background: transparent;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  transform: translateY(-100%);
   visibility: hidden;
   pointer-events: none;
-  transform: translateY(-0.35rem);
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease,
-    visibility 0.2s ease;
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0.5s;
 }
 
-.lang-menu::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -0.45rem;
-  height: 0.45rem;
+.lang-menu > li {
+  display: block;
 }
 
 .lang-switch.is-open .lang-menu {
-  opacity: 1;
+  transform: translateY(0);
   visibility: visible;
   pointer-events: auto;
-  transform: translateY(0);
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s;
 }
 
 .lang-option {
   display: block;
-  width: 100%;
-  padding: 0.55rem 0.7rem;
-  border: none;
-  border-radius: 0.4rem;
-  background: transparent;
-  color: var(--ink-muted);
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  text-align: left;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(2.15rem, 8vw, 5.25rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-align: center;
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .lang-option:hover {
-  background: var(--row-hover);
-  color: var(--ink);
+  background: none;
+  opacity: 0.62;
 }
 
 .lang-option.is-active {
   color: var(--ink);
-  font-weight: 600;
+  font-weight: 800;
+}
+
+html.lang-open {
+  overflow: hidden;
 }
 
 .theme-toggle .icon-sun,
@@ -656,6 +676,7 @@ html.theme-to-dark::view-transition-new(root) {
   }
 
   .lang-menu {
+    transform: none;
     transition: none;
   }
 
@@ -673,5 +694,11 @@ html.theme-to-dark::view-transition-new(root) {
   .interactive-tile:hover::before {
     transform: none;
     opacity: 0;
+  }
+
+  .project-row,
+  .project-row.is-active {
+    transform: none;
+    transition: none;
   }
 }

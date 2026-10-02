@@ -56,11 +56,11 @@ export const locales = {
     },
     projects: [
       {
-        name: "ROCLING 2025 TCU Reproduction",
+        name: "Slots",
         description:
-          "Independent reproduction of TCU’s ROCLING-2025 Chinese dimensional sentiment pipeline: e5 + LLM embeddings, SVR / ensemble, with a five-encoder test result close to the paper.",
-        stack: ["Python", "NLP", "PyTorch", "SVR"],
-        url: "https://github.com/jettakarn/rocling25-tcu-repro",
+          "Up to five buttons on the left of the GNOME panel. Each one opens an app, a website, or the applications overview.",
+        stack: ["JavaScript", "GNOME", "GJS"],
+        url: "https://github.com/jettakarn/slots",
         year: "2026",
       },
       {
@@ -72,19 +72,11 @@ export const locales = {
         year: "2026",
       },
       {
-        name: "Personal site",
+        name: "rocling25-tcu-repro",
         description:
-          "This Astro site: bilingual EN / 繁中, monochrome theme, projects and education.",
-        stack: ["Astro", "Tailwind"],
-        url: "https://github.com/jettakarn/jettakarn.github.io",
-        year: "2025",
-      },
-      {
-        name: "2shiftly",
-        description:
-          "Local web tool that OCR-scans daily shift PDFs into calendar .ics files (built for Ambassador Cinema rosters), fully offline.",
-        stack: ["Python", "OCR", "Web"],
-        url: "https://github.com/jettakarn/2shiftly",
+          "Independent reproduction of TCU’s ROCLING-2025 Chinese dimensional sentiment pipeline: e5 + LLM embeddings, SVR / ensemble, with a five-encoder test result close to the paper.",
+        stack: ["Python", "NLP", "PyTorch", "SVR"],
+        url: "https://github.com/jettakarn/rocling25-tcu-repro",
         year: "2026",
       },
     ],
@@ -150,11 +142,11 @@ export const locales = {
     },
     projects: [
       {
-        name: "ROCLING 2025 TCU 重現",
+        name: "Slots",
         description:
-          "獨立重現 TCU 於 ROCLING-2025 的華語維度情感分析流程：e5 與 LLM embedding、SVR／ensemble，五編碼器測試結果接近論文 Table 4。",
-        stack: ["Python", "NLP", "PyTorch", "SVR"],
-        url: "https://github.com/jettakarn/rocling25-tcu-repro",
+          "在 GNOME 面板左側放最多五顆按鈕，各自開啟應用程式、網站或應用程式總覽。",
+        stack: ["JavaScript", "GNOME", "GJS"],
+        url: "https://github.com/jettakarn/slots",
         year: "2026",
       },
       {
@@ -166,18 +158,11 @@ export const locales = {
         year: "2026",
       },
       {
-        name: "個人網站",
-        description: "本站：Astro、中英雙語、黑白主題，呈現專案與學歷。",
-        stack: ["Astro", "Tailwind"],
-        url: "https://github.com/jettakarn/jettakarn.github.io",
-        year: "2025",
-      },
-      {
-        name: "2shiftly",
+        name: "rocling25-tcu-repro",
         description:
-          "本機網頁工具：掃描班表 PDF，離線 OCR 後匯出行事曆 .ics（目前對應國賓影城班表）。",
-        stack: ["Python", "OCR", "Web"],
-        url: "https://github.com/jettakarn/2shiftly",
+          "獨立重現 TCU 於 ROCLING-2025 的華語維度情感分析流程：e5 與 LLM embedding、SVR／ensemble，五編碼器測試結果接近論文 Table 4。",
+        stack: ["Python", "NLP", "PyTorch", "SVR"],
+        url: "https://github.com/jettakarn/rocling25-tcu-repro",
         year: "2026",
       },
     ],

@@ -115,23 +115,23 @@ const techIcons = {
                 <li role="none">
                   <button
                     type="button"
-                    class="lang-option is-active"
-                    role="option"
-                    data-lang-value="en"
-                    aria-selected="true"
-                  >
-                    English
-                  </button>
-                </li>
-                <li role="none">
-                  <button
-                    type="button"
                     class="lang-option"
                     role="option"
                     data-lang-value="zh-Hant"
                     aria-selected="false"
                   >
                     繁體中文
+                  </button>
+                </li>
+                <li role="none">
+                  <button
+                    type="button"
+                    class="lang-option is-active"
+                    role="option"
+                    data-lang-value="en"
+                    aria-selected="true"
+                  >
+                    English
                   </button>
                 </li>
               </ul>
@@ -292,9 +292,9 @@ const techIcons = {
               projects.map((project, index) => (
                 <button
                   type="button"
-                  class:list={["project-row", index === 0 && "is-active"]}
+                  class="project-row"
                   role="option"
-                  aria-selected={index === 0 ? "true" : "false"}
+                  aria-selected="false"
                   data-project-index={index}
                 >
                   <span class="project-row-name">{project.name}</span>
@@ -578,7 +578,7 @@ const techIcons = {
         list.innerHTML = locale.projects
           .map(
             (project, index) => `
-              <button type="button" class="project-row${index === 0 ? " is-active" : ""}" role="option" aria-selected="${index === 0 ? "true" : "false"}" data-project-index="${index}">
+              <button type="button" class="project-row" role="option" aria-selected="false" data-project-index="${index}">
                 <span class="project-row-name">${escapeHtml(project.name)}</span>
                 <span class="project-row-desc">${escapeHtml(project.description)}</span>
               </button>`,
@@ -591,6 +591,10 @@ const techIcons = {
             if (!Number.isNaN(index)) showProject(index);
           };
           row.addEventListener("pointerenter", select);
+          row.addEventListener("pointerleave", () => {
+            row.classList.remove("is-active");
+            row.setAttribute("aria-selected", "false");
+          });
           row.addEventListener("click", (event) => {
             event.preventDefault();
             select();
@@ -598,6 +602,10 @@ const techIcons = {
         });
 
         showProject(0);
+        list.querySelectorAll<HTMLButtonElement>(".project-row").forEach((row) => {
+          row.classList.remove("is-active");
+          row.setAttribute("aria-selected", "false");
+        });
       }
 
       function renderEducation(locale: LocaleData) {
@@ -720,6 +728,7 @@ const techIcons = {
         const toggle = document.getElementById("lang-toggle");
         if (!switchEl || !toggle) return;
         switchEl.classList.toggle("is-open", open);
+        document.documentElement.classList.toggle("lang-open", open);
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
       }
 
@@ -729,21 +738,19 @@ const techIcons = {
         runThemeWipe(themeToggle, next);
       });
 
-      const langSwitch = document.getElementById("lang-switch");
       const langToggle = document.getElementById("lang-toggle");
       const langMenu = document.getElementById("lang-menu");
-
-      langSwitch?.addEventListener("pointerenter", () => {
-        setLangMenuOpen(true);
-      });
-      langSwitch?.addEventListener("pointerleave", () => {
-        setLangMenuOpen(false);
-      });
 
       langToggle?.addEventListener("click", (event) => {
         event.stopPropagation();
         const open = langToggle.getAttribute("aria-expanded") !== "true";
         setLangMenuOpen(open);
+      });
+
+      langMenu?.addEventListener("click", (event) => {
+        const target = event.target as HTMLElement;
+        if (target.closest("[data-lang-value]")) return;
+        setLangMenuOpen(false);
       });
 
       langMenu?.querySelectorAll<HTMLButtonElement>("[data-lang-value]").forEach((btn) => {
