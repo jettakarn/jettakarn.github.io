@@ -576,6 +576,29 @@ html.theme-to-dark::view-transition-new(root) {
   background: var(--row-hover);
 }
 
+.lang-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  background: transparent;
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  transition:
+    opacity 0.5s ease,
+    visibility 0s linear 0.5s;
+}
+
+html.lang-open .lang-backdrop {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.5s ease,
+    visibility 0s;
+}
+
 .lang-menu {
   position: fixed;
   inset: 0;
@@ -589,8 +612,6 @@ html.theme-to-dark::view-transition-new(root) {
   padding: 0;
   list-style: none;
   background: transparent;
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
   transform: translateY(-100%);
   visibility: hidden;
   pointer-events: none;
