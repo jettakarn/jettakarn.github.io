@@ -72,11 +72,11 @@ export const locales = {
         year: "2026",
       },
       {
-        name: "rocling25-tcu-repro",
+        name: "ambify-bot",
         description:
-          "Independent reproduction of TCU’s ROCLING-2025 Chinese dimensional sentiment pipeline: e5 + LLM embeddings, SVR / ensemble, with a five-encoder test result close to the paper.",
-        stack: ["Python", "NLP", "PyTorch", "SVR"],
-        url: "https://github.com/jettakarn/rocling25-tcu-repro",
+          "LINE bot for Ambassador cinema rosters: upload a PDF, then look up shifts, monthly hours, and who can take a dropped shift.",
+        stack: ["JavaScript", "LINE", "Apps Script"],
+        url: "https://github.com/jettakarn/ambify-bot",
         year: "2026",
       },
     ],
@@ -158,11 +158,11 @@ export const locales = {
         year: "2026",
       },
       {
-        name: "rocling25-tcu-repro",
+        name: "ambify-bot",
         description:
-          "獨立重現 TCU 於 ROCLING-2025 的華語維度情感分析流程：e5 與 LLM embedding、SVR／ensemble，五編碼器測試結果接近論文 Table 4。",
-        stack: ["Python", "NLP", "PyTorch", "SVR"],
-        url: "https://github.com/jettakarn/rocling25-tcu-repro",
+          "國賓影城班表用的 LINE 機器人：上傳 PDF 後，可查班次、當月時數，以及誰能接被丟出的班。",
+        stack: ["JavaScript", "LINE", "Apps Script"],
+        url: "https://github.com/jettakarn/ambify-bot",
         year: "2026",
       },
     ],
